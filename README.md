@@ -5,4 +5,4 @@
 
 Hi! My name is Ethan Pomeroy and I am currently a third-year undergraduate MSci student at the University of Birmingham.
 
-The area of mathematics I speacialise in the most is Analysis.
+The area of mathematics I speacialise in is Analysis.
