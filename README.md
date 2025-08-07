@@ -1,13 +1,8 @@
-# Ethan Pomeroy's Website
-
-Welcome to the personal website of Ethan Pomeroy.
+# Ethan Pomeroy
+ email: exp373 [at] student [dot] bham [dot] ac [dot] uk
 
 ## About
 
-Ethan Pomeroy is an MSci student at the University of Birmingham.
+Hi! My name is Ethan Pomeroy and I am currently a third-year undergraduate MSci student at the University of Birmingham.
 
----
-
-This site contains information about Ethan's academic journey, projects, and interests.
-
-Feel free to explore!
+The area of mathematics I speacialise in the most is Analysis.
