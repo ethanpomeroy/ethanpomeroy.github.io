@@ -78,7 +78,17 @@
         }
         .hero {
             padding: 4rem 0;
-            text-align: center;
+        }
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .hero-content {
+                grid-template-columns: 3fr 2fr;
+            }
         }
         .hero h1 {
             font-size: 2rem;
@@ -90,7 +100,7 @@
             font-size: 1rem;
             color: var(--secondary-text-color);
             max-width: 600px;
-            margin: 1rem auto 0;
+            margin: 1rem 0 0;
         }
         .hero .tagline {
             display: inline-flex;
@@ -107,7 +117,6 @@
         .hero .buttons {
             margin-top: 1.5rem;
             display: flex;
-            justify-content: center;
             gap: 0.75rem;
             flex-wrap: wrap;
         }
@@ -267,21 +276,57 @@
     <main>
         <div class="hero">
             <div class="container">
-                <div class="tagline">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                    3rd-Year Mathematics (Analysis) — University of Birmingham
-                </div>
-                <h1>Rigour. Structure. Insight.</h1>
-                <p>I'm a mathematics student focused on real, complex, functional, and Fourier analysis, and linear algebra. I enjoy turning abstract theory into clear arguments, readable notes, and practical code.</p>
-                <div class="buttons">
-                    <a href="#projects" class="btn btn-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l4-4-4-4m-8 8l-4-4 4-4"/></svg>
-                        View Projects
-                    </a>
-                    <a href="mailto:exp373@student.bham.ac.uk" class="btn btn-secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7-10-7"/></svg>
-                        Email Me
-                    </a>
+                <div class="hero-content">
+                    <div>
+                        <div class="tagline">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            3rd-Year Mathematics (Analysis) — University of Birmingham
+                        </div>
+                        <h1>Rigour. Structure. Insight.</h1>
+                        <p>I'm a mathematics student focused on real & functional analysis, optimization, and linear algebra. I enjoy turning abstract theory into clear arguments, readable notes, and practical code.</p>
+                        <div class="buttons">
+                            <a href="#projects" class="btn btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l4-4-4-4m-8 8l-4-4 4-4"/></svg>
+                                View Projects
+                            </a>
+                            <a href="mailto:exp373@student.bham.ac.uk" class="btn btn-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7-10-7"/></svg>
+                                Email Me
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-grid">
+                            <div>
+                                <p class="text-sm">
+                                    <span class="text-zinc-500">Focus</span>
+                                    <br>
+                                    <span class="font-semibold">Analysis, Optimization</span>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-sm">
+                                    <span class="text-zinc-500">Tools</span>
+                                    <br>
+                                    <span class="font-semibold">LaTeX, MATLAB, Python</span>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-sm">
+                                    <span class="text-zinc-500">Interests</span>
+                                    <br>
+                                    <span class="font-semibold">Simplex, PDEs, Probability</span>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="text-sm">
+                                    <span class="text-zinc-500">Location</span>
+                                    <br>
+                                    <span class="font-semibold">Birmingham, UK</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -292,20 +337,20 @@
                 <p class="subtitle">What I'm studying and why it matters</p>
                 <div class="card-grid">
                     <div class="card">
-                        <p>I study Mathematics at the University of Birmingham with a concentration in Analysis. My current interests include real analysis (rigour & proof), functional analysis (operator viewpoints), and linear algebra. I enjoy writing clean \(\LaTeX{}\) notes and building small tools that visualise or verify results.</p>
+                        <p>I study Mathematics at the University of Birmingham with a concentration in Analysis. My current interests include real analysis (rigour & proof), functional analysis (operator viewpoints), optimization (linear programming & duality), and probability. I enjoy writing clean LaTeX notes and building small tools that visualize or verify results.</p>
                     </div>
                     <div class="card">
                         <div class="card-header">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M4 21v-7m0-4V3m8 18v-5m0-8V3m8 18v-9m0-4V3"/><path d="M1 14h6M9 16h6M17 12h6"/></svg>
                             University of Birmingham
                         </div>
-                        <p>MSci (Hons) Mathematics — Year 3</p>
-                        <p style="margin-top: 0.5rem;">Expected Graduation: <strong>2027</strong></p>
+                        <p>BSc (Hons) Mathematics — Year 3</p>
+                        <p style="margin-top: 0.5rem;">Expected Graduation: <strong>2026</strong></p>
                     </div>
                 </div>
             </section>
 
-<!--             <section id="projects">
+            <section id="projects">
                 <h2>Projects</h2>
                 <p class="subtitle">Math that ships</p>
                 <div class="card-grid cols-3">
@@ -334,7 +379,7 @@
                         <a href="#" class="link">Download <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m5-3h6v6m-11 5L21 3"/></svg></a>
                     </div>
                 </div>
-            </section> -->
+            </section>
         
             <section id="contact">
                 <h2>Get in touch</h2>
@@ -354,7 +399,7 @@
                             LinkedIn
                         </a>
                     </div>
-                    <p style="margin-top: 1rem;">I’m open to tutoring, research assistant roles, and collaborations on maths education tools.</p>
+                    <p style="margin-top: 1rem;">I’m open to tutoring, research assistant roles, and collaborations on math/CS education tools.</p>
                 </div>
             </section>
         </div>
