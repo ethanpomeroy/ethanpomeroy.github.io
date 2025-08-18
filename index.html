@@ -4,256 +4,351 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethan Pomeroy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         :root {
             --bg-color: #f8fafc;
             --text-color: #1f2937;
-            --card-bg: rgba(255, 255, 255, 0.7);
+            --card-bg: rgba(255, 255, 255, 0.75);
             --border-color: #e5e7eb;
             --secondary-text-color: #6b7280;
             --primary-color: #1f2937;
             --primary-text-color: #f9fafb;
             --secondary-btn-bg: #fff;
-            --hover-color: #f3f4f6;
+            --hover-color: #f1f5f9;
+            --shadow-color: rgba(31, 41, 55, 0.05);
+            --subtle-gradient-1: #dbeafe;
+            --subtle-gradient-2: #f0e9ff;
         }
+
         body.dark {
             --bg-color: #0c0a09;
-            --text-color: #f9fafb;
-            --card-bg: rgba(23, 23, 23, 0.6);
+            --text-color: #e2e8f0;
+            --card-bg: rgba(23, 23, 23, 0.65);
             --border-color: #262626;
-            --secondary-text-color: #a1a1aa;
-            --primary-color: #f9fafb;
+            --secondary-text-color: #94a3b8;
+            --primary-color: #e2e8f0;
             --primary-text-color: #1f2937;
             --secondary-btn-bg: #171717;
-            --hover-color: #262626;
+            --hover-color: #1a1a1a;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --subtle-gradient-1: #0f172a;
+            --subtle-gradient-2: #1e0a29;
         }
+
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Figtree', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
             margin: 0;
-            transition: color 0.3s, background-color 0.3s;
-            background: radial-gradient(circle at 10% 10%, rgba(14,165,233,0.1) 0%, transparent 25%),
-                        radial-gradient(circle at 90% 90%, rgba(139,92,246,0.1) 0%, transparent 25%);
+            transition: color 0.5s, background-color 0.5s;
+            background: radial-gradient(circle at 10% 10%, var(--subtle-gradient-1) 0%, transparent 25%),
+                        radial-gradient(circle at 90% 90%, var(--subtle-gradient-2) 0%, transparent 25%);
         }
+
         .container {
             max-width: 1024px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
         }
+
         header {
             position: sticky;
             top: 0;
             z-index: 10;
             background-color: var(--card-bg);
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
             padding: 1rem 0;
+            transition: background-color 0.5s, border-color 0.5s;
         }
+        
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.5rem;
+            font-weight: 800;
             text-decoration: none;
             color: var(--text-color);
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
+
         nav a {
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             color: var(--secondary-text-color);
             text-decoration: none;
             margin-left: 1.5rem;
-            transition: color 0.2s;
+            transition: color 0.3s;
         }
+
         nav a:hover {
             color: var(--text-color);
         }
+
         .hero {
-            padding: 4rem 0;
+            padding: 5rem 0;
         }
+
         .hero-content {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 3rem;
             align-items: center;
         }
+
         @media (min-width: 768px) {
             .hero-content {
                 grid-template-columns: 3fr 2fr;
             }
         }
+
         .hero h1 {
-            font-size: 2rem;
+            font-size: clamp(2rem, 5vw, 2.75rem);
             font-weight: 800;
             line-height: 1.2;
-            margin: 0;
+            margin: 0.5rem 0 0;
         }
+        
         .hero p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--secondary-text-color);
             max-width: 600px;
-            margin: 1rem 0 0;
+            margin: 1.25rem 0 0;
         }
+        
         .hero .tagline {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 500;
             border: 1px solid var(--border-color);
             background-color: var(--card-bg);
             border-radius: 9999px;
-            padding: 0.25rem 0.75rem;
+            padding: 0.35rem 0.9rem;
             margin-bottom: 1rem;
             color: var(--secondary-text-color);
+            box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -2px var(--shadow-color);
         }
+
         .hero .buttons {
-            margin-top: 1.5rem;
+            margin-top: 2rem;
             display: flex;
             gap: 0.75rem;
             flex-wrap: wrap;
         }
+
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1rem;
+            padding: 0.75rem 1.25rem;
             border-radius: 9999px;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.875rem;
-            transition: background-color 0.2s;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
         }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
         .btn-primary {
             background-color: var(--primary-color);
             color: var(--primary-text-color);
             border: 1px solid var(--primary-color);
         }
+        
         .btn-primary:hover {
             opacity: 0.9;
         }
+
         .btn-secondary {
             background-color: var(--secondary-btn-bg);
             color: var(--text-color);
             border: 1px solid var(--border-color);
         }
+
         .btn-secondary:hover {
             background-color: var(--hover-color);
         }
+
         section {
             padding: 4rem 0;
         }
+
         section h2 {
-            font-size: 1.75rem;
-            font-weight: 700;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 800;
             margin-top: 0;
         }
+
         .subtitle {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--secondary-text-color);
             margin-bottom: 2rem;
         }
+
         .card-grid {
             display: grid;
             gap: 1.5rem;
             grid-template-columns: 1fr;
         }
+
         @media (min-width: 768px) {
             .card-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
             .card-grid.cols-3 {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+        
         .card {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
             border-radius: 1rem;
             padding: 1.5rem;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -2px var(--shadow-color);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px var(--shadow-color), 0 4px 6px -4px var(--shadow-color);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--subtle-gradient-1), var(--subtle-gradient-2));
+            opacity: 0.1;
+            z-index: -1;
+            transition: opacity 0.5s;
+        }
+        
+        .card:hover::before {
+            opacity: 0.15;
+        }
+
         .card .icon {
-            width: 1.25rem;
-            height: 1.25rem;
-            stroke-width: 2;
-            margin-right: 0.5rem;
-            color: #6b7280;
+            width: 1.5rem;
+            height: 1.5rem;
+            stroke-width: 1.75;
+            margin-right: 0.75rem;
+            color: var(--secondary-text-color);
         }
+
         .card-header {
             display: flex;
             align-items: center;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.125rem;
             margin-bottom: 0.5rem;
         }
+
         .card p, .card li {
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             color: var(--secondary-text-color);
+            line-height: 1.5;
         }
+
         .card ul {
             list-style: disc;
             padding-left: 1.25rem;
-            margin: 0.5rem 0 0;
+            margin: 0.75rem 0 0;
         }
+
         .card .link {
             display: inline-flex;
             align-items: center;
             gap: 0.25rem;
             text-decoration: underline;
             text-underline-offset: 4px;
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             margin-top: 1rem;
             color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
         }
+
+        .link svg {
+            transition: transform 0.3s;
+        }
+
+        .link:hover svg {
+            transform: translateX(3px);
+        }
+        
         .contact-links {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
         }
+
         .contact-links a {
-            font-size: 0.875rem;
+            font-size: 0.95rem;
         }
+
         footer {
             text-align: center;
             padding: 2.5rem 0;
             font-size: 0.875rem;
             color: var(--secondary-text-color);
         }
+
         .latex {
             font-style: italic;
         }
+
         .toggle-switch {
-            cursor: pointer;
-            width: 2.25rem;
-            height: 1.25rem;
+            width: 2.5rem;
+            height: 1.5rem;
             background-color: var(--border-color);
             border-radius: 9999px;
             position: relative;
-            transition: background-color 0.2s;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            padding: 0 4px;
         }
-        .toggle-switch:after {
-            content: '';
-            position: absolute;
-            top: 2px;
-            left: 2px;
+        
+        .toggle-switch-icon {
+            color: var(--secondary-text-color);
             width: 1rem;
             height: 1rem;
-            background-color: var(--secondary-btn-bg);
-            border-radius: 9999px;
-            transition: transform 0.2s;
+            transition: transform 0.3s, color 0.3s;
         }
-        body.dark .toggle-switch {
-            background-color: #6b7280;
+        
+        body:not(.dark) .toggle-switch-moon {
+            transform: translateX(1.1rem);
+            color: var(--text-color);
         }
-        body.dark .toggle-switch:after {
-            transform: translateX(1rem);
+        
+        body.dark .toggle-switch-sun {
+            transform: translateX(-1.1rem);
+            color: var(--text-color);
         }
     </style>
 </head>
@@ -261,14 +356,17 @@
     <header>
         <div class="container">
             <a href="#" class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.666 12l-.999 1.732-2.165-1.25-2.165 1.25-1-1.732 2.165-1.25L4.332 9.268l.999-1.732 2.165 1.25 2.165-1.25 1 1.732-2.165 1.25z"/><path d="M12.334 12l.999-1.732 2.165 1.25 2.165-1.25 1 1.732-2.165 1.25L19.668 14.732l-.999 1.732-2.165-1.25-2.165 1.25-1-1.732 2.165-1.25z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-infinity"><path d="M12 2a4 4 0 0 0-4 4v.135a4 4 0 0 0 3.197 3.913M12 22a4 4 0 0 1 4-4v-.135a4 4 0 0 1-3.197-3.913"/><path d="M17 12c.5-1 1-1.5 1.5-2h.147a4 4 0 0 0-3.197-3.913M7 12c-.5-1-1-1.5-1.5-2H5.353a4 4 0 0 1 3.197-3.913"/><path d="M12 12c1 1 1.5 2 2 3h.276a4 4 0 0 0 3.197 3.913M12 12c-1-1-1.5-2-2-3H9.724a4 4 0 0 1-3.197-3.913"/></svg>
                 <span>Ethan Pomeroy</span>
             </a>
             <nav>
                 <a href="#about">About</a>
                 <a href="#contact">Contact</a>
-				<a href="#bell-ringing">Bell ringing</a>
-                <div class="toggle-switch" onclick="document.body.classList.toggle('dark')"></div>
+                <a href="#bell-ringing">Bell ringing</a>
+                <div class="toggle-switch" id="dark-mode-toggle">
+                    <svg class="toggle-switch-icon toggle-switch-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/></svg>
+                    <svg class="toggle-switch-icon toggle-switch-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6.364 6.364 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                </div>
             </nav>
         </div>
     </header>
@@ -279,50 +377,46 @@
                 <div class="hero-content">
                     <div>
                         <div class="tagline">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                            3rd-Year Mathematics (Analysis) — University of Birmingham
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M21.43 2c.4 1.25-.97 2.45-1.43 2.57-2-.45-4.4-.73-6.57-.73-4.57 0-8.25 1.58-9.43 4.38a2 2 0 0 0 1.54 2.87c.7-.22 2.22-.5 3.54-.5 4.57 0 8.25 1.58 9.43 4.38a2 2 0 0 0-1.54 2.87c-.7.22-2.22.5-3.54.5-4.57 0-8.25-1.58-9.43-4.38a2 2 0 0 0-1.54-2.87c-.7-.22-2.22-.5-3.54-.5-4.57 0-8.25 1.58-9.43 4.38"/><path d="M12 2c.5 1 1 1.5 1.5 2h.147a4 4 0 0 0-3.197-3.913M12 22a4 4 0 0 1 4-4v-.135a4 4 0 0 1-3.197-3.913"/><path d="M17 12c.5-1 1-1.5 1.5-2h.147a4 4 0 0 0-3.197-3.913M7 12c-.5-1-1-1.5-1.5-2H5.353a4 4 0 0 1 3.197-3.913"/><path d="M12 12c1 1 1.5 2 2 3h.276a4 4 0 0 0 3.197 3.913M12 12c-1-1-1.5-2-2-3H9.724a4 4 0 0 1-3.197-3.913"/></svg>
+                            3rd-Year Mathematics — University of Birmingham
                         </div>
                         <h1>Rigour. Structure. Insight.</h1>
                         <p>I'm a mathematics student focused on real & complex analysis, functional & Fourier analysis, differential equations, and linear algebra. I enjoy turning abstract theory into clear arguments, readable notes, and practical code.</p>
                         <div class="buttons">
-<!--                             <a href="#projects" class="btn btn-primary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l4-4-4-4m-8 8l-4-4 4-4"/></svg>
-                                View Projects
-                            </a> -->
-                            <a href="mailto:exp373@student.bham.ac.uk" class="btn btn-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7-10-7"/></svg>
+                            <a href="mailto:exp373@student.bham.ac.uk" class="btn btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
                                 Email Me
                             </a>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-grid">
+                        <div class="card-grid cols-2">
                             <div>
                                 <p class="text-sm">
-                                    <span class="text-zinc-500">Focus</span>
+                                    <span class="text-zinc-500 font-semibold text-xs uppercase tracking-wide">Focus</span>
                                     <br>
-                                    <span class="font-semibold">Analysis, Differential Equations, Linear Algebra</span>
+                                    <span class="font-semibold text-lg text-zinc-900 dark:text-zinc-100">Analysis, Diff. Eq., Linear Algebra</span>
                                 </p>
                             </div>
                             <div>
                                 <p class="text-sm">
-                                    <span class="text-zinc-500">Tools</span>
+                                    <span class="text-zinc-500 font-semibold text-xs uppercase tracking-wide">Tools</span>
                                     <br>
-                                    <span class="font-semibold">LaTeX, MATLAB, Python</span>
+                                    <span class="font-semibold text-lg text-zinc-900 dark:text-zinc-100">LaTeX, MATLAB, Python</span>
                                 </p>
                             </div>
                             <div>
                                 <p class="text-sm">
-                                    <span class="text-zinc-500">Interests</span>
+                                    <span class="text-zinc-500 font-semibold text-xs uppercase tracking-wide">Interests</span>
                                     <br>
-                                    <span class="font-semibold">Analysis, ODEs, PDEs, Linear Algebra</span>
+                                    <span class="font-semibold text-lg text-zinc-900 dark:text-zinc-100">Analysis, ODEs, PDEs, Topology</span>
                                 </p>
                             </div>
                             <div>
                                 <p class="text-sm">
-                                    <span class="text-zinc-500">Location</span>
+                                    <span class="text-zinc-500 font-semibold text-xs uppercase tracking-wide">Location</span>
                                     <br>
-                                    <span class="font-semibold">Birmingham, UK</span>
+                                    <span class="font-semibold text-lg text-zinc-900 dark:text-zinc-100">Birmingham, UK</span>
                                 </p>
                             </div>
                         </div>
@@ -330,7 +424,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="container">
             <section id="about">
                 <h2>About</h2>
@@ -341,7 +435,7 @@
                     </div>
                     <div class="card">
                         <div class="card-header">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M4 21v-7m0-4V3m8 18v-5m0-8V3m8 18v-9m0-4V3"/><path d="M1 14h6M9 16h6M17 12h6"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon lucide lucide-university"><circle cx="12" cy="12" r="10"/><path d="M12 2v20"/><path d="M2.2 14.8h19.6"/><path d="M2.2 9.2h19.6"/><path d="M2.2 12c0 5.4 4.6 9.8 10 9.8s10-4.4 10-9.8"/><path d="M12 2c-5.4 0-9.8 4.4-9.8 10S6.6 22 12 22s9.8-4.4 9.8-10S17.4 2 12 2z"/><path d="M12 2v20"/><path d="M2.2 14.8h19.6"/><path d="M2.2 9.2h19.6"/></svg>
                             University of Birmingham
                         </div>
                         <p>MSci (Hons) Mathematics — Year 3</p>
@@ -349,7 +443,7 @@
                     </div>
                 </div>
             </section>
-            
+
             <section id="core-coursework">
                 <h2>Core Coursework</h2>
                 <p class="subtitle">A detailed breakdown of my studies, year-by-year</p>
@@ -358,7 +452,7 @@
                         <div class="card-header">
                             Year 1 2023/24
                         </div>
-                        <ul class="space-y-1 text-sm list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+                        <ul>
                             <li>Real Analysis (1RA)</li>
                             <li>Sequences and Series (1SAS)</li>
                             <li>Vectors, Geometry and Linear Algebra (1VGLA)</li>
@@ -371,7 +465,7 @@
                         <div class="card-header">
                             Year 2 2024/25
                         </div>
-                        <ul class="space-y-1 text-sm list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+                        <ul>
                             <li>Linear Algebra and Linear Programming (2LALP)</li>
                             <li>Real and Complex Analysis (2RCA)</li>
                             <li>Multivariable and Vector Analysis (2MVA)</li>
@@ -384,7 +478,7 @@
                         <div class="card-header">
                             Year 3 2025/26 -- Current year
                         </div>
-                        <ul class="space-y-1 text-sm list-disc pl-5 text-zinc-700 dark:text-zinc-300">
+                        <ul>
                             <li>Functional and Fourier Analysis (3FFA)</li>
                             <li>Methods in Partial Differential Equations (3MePD)</li>
                             <li>Applied Mathematical Analysis (3AMA)</li>
@@ -395,316 +489,259 @@
                 </div>
             </section>
 
-<!--             <section id="projects">
-                <h2>Projects</h2>
-                <p class="subtitle">Math that ships</p>
-                <div class="card-grid cols-3">
+            <section id="bell-ringing">
+                <h2>Bell-Ringing Record</h2>
+                <p class="subtitle">Select performances featuring me</p>
+                <div class="card-grid">
                     <div class="card">
-                        <div class="card-header">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9m-7-7v7h7m-7 7H7"/></svg>
-                            Simplex Method Notes
-                        </div>
-                        <p>A polished LaTeX booklet covering standard form, pivot rules, degeneracy, duality, and a complete worked example. Includes a clean TikZ geometry for feasible regions.</p>
-                        <a href="#" class="link">View PDF <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m5-3h6v6m-11 5L21 3"/></svg></a>
+                        <div class="card-header">26 Jun 2025 – 5040 Plain Bob Triples (Peal)</div>
+                        <p>Studley, Warwickshire – Coventry Diocesan Guild</p>
+                        <p>Composed by C Ravenscroft. Rung to mark the Diamond Wedding Anniversary of June & Richard Spray. My first peal.</p>
+                        <ul>
+                            <li>1 Ethan L Pomeroy</li>
+                            <li>2 Louise M Grubb</li>
+                            <li>3 Annie Hall</li>
+                            <li>4 Rachel D Page</li>
+                            <li>5 Robin J Dale</li>
+                            <li>6 Andrew J Hartley</li>
+                            <li>7 Michael Chester (C)</li>
+                            <li>8 Timothy G Haslam</li>
+                        </ul>
                     </div>
                     <div class="card">
-                        <div class="card-header">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M16 18l4-4-4-4m-8 8l-4-4 4-4"/></svg>
-                            Phase Portrait Visualizer
-                        </div>
-                        <p>Small MATLAB/Python scripts for linear systems <span class="latex">\(\dot{x}=Ax\)</span>. Plots eigen-directions, trajectories, and classifies critical points.</p>
-                        <a href="#" class="link">GitHub Repo <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m5-3h6v6m-11 5L21 3"/></svg></a>
+                        <div class="card-header">15 Aug 2025 – Rounds & Call Changes</div>
+                        <p>Studley, Warwickshire – Coventry Diocesan Guild</p>
+                        <p>Rung on VJ Day in memory of the fallen and to celebrate peace; included VE Day recruits ringing for the first time.</p>
+                        <ul>
+                            <li>1 Daniel Morris</li>
+                            <li>2 Hilary Gayler</li>
+                            <li>3 Dave Harding</li>
+                            <li>4 Stuart Stanton</li>
+                            <li>5 Dave Bourne</li>
+                            <li>6 Louise Grubb</li>
+                            <li>7 Ethan Pomeroy</li>
+                            <li>8 Richard Spray</li>
+                            <li>9 Jemma Bourne</li>
+                            <li>10 Belle Lineham</li>
+                            <li>11 Grace Bourne</li>
+                            <li>12 Luke Bourne</li>
+                        </ul>
                     </div>
                     <div class="card">
-                        <div class="card-header">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9m-7-7v7h7m-7 7H7"/></svg>
-                            Analysis Cheatsheets
-                        </div>
-                        <p>One-page references for compactness, completeness, continuity, and convergence tests—proof sketches + common pitfalls.</p>
-                        <a href="#" class="link">Download <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m5-3h6v6m-11 5L21 3"/></svg></a>
+                        <div class="card-header">16 Aug 2025 – 1260 Plain Bob Doubles</div>
+                        <p>Studley, Warwickshire – Coventry Diocesan Guild</p>
+                        <p>First inside bell.</p>
+                        <ul>
+                            <li>1 Louise Grubb</li>
+                            <li>2 Ethan Pomeroy</li>
+                            <li>3 Annie Hall</li>
+                            <li>4 Charles Hayward</li>
+                            <li>5 Michael Chester (C)</li>
+                            <li>6 David Bourne</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">8 May 2025 – General Ringing & Chiming</div>
+                        <p>Studley, Warwickshire – Coventry Diocesan Guild</p>
+                        <p>42 ringers/chimers celebrated the 80th Anniversary of Victory in Europe.</p>
+                        <ul>
+                            <li>Louise Grubb</li>
+                            <li>Richard Spray</li>
+                            <li>Chris Eldridge</li>
+                            <li>Ethan Pomeroy</li>
+                            <li>Tash Vale</li>
+                            <li>Dave Harding</li>
+                            <li>Hilary Gayler</li>
+                            <li>Trevor Sheppard</li>
+                            <li>Daniel Morris</li>
+                            <li>Stuart Stanton</li>
+                            <li>Lorena Juan Marti</li>
+                            <li>… plus many visitors (listed in original post)</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">29 May 2025 – 1260 Plain Bob Doubles</div>
+                        <p>Studley, Warwickshire – Coventry Diocesan Guild</p>
+                        <p>Rung to celebrate Richard H Spray’s 80th birthday (conductor: Rachel D Page).</p>
+                        <ul>
+                            <li>Ethan Pomeroy</li>
+                            <li>Louise Grubb</li>
+                            <li>Robin J Dale</li>
+                            <li>David M Jones</li>
+                            <li>Rachel D Page (C)</li>
+                            <li>David Bourne</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">19 Sep 2024 – 1680 Plain Bob Triples</div>
+                        <p>Studley, Warwickshire – Nativity of the Blessed Virgin Mary</p>
+                        <p>Composed by C Ravencroft.</p>
+                        <ul>
+                            <li>Ethan Pomeroy</li>
+                            <li>Louise Grubb</li>
+                            <li>Annie Hall</li>
+                            <li>Rachel D Page</li>
+                            <li>Robin Dale</li>
+                            <li>Tim Haslam</li>
+                            <li>Andrew J Hartley (C)</li>
+                            <li>Noah Corlett</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">6 Jun 2024 – General Ringing</div>
+                        <p>Studley, Warwickshire</p>
+                        <p>Rounds & call changes, various methods, to commemorate 80 years since the D-Day landings.</p>
+                        <ul>
+                            <li>Robin Dale</li>
+                            <li>Chris Tennant</li>
+                            <li>Lizzie Tennant</li>
+                            <li>Ethan Pomeroy</li>
+                            <li>Peter E S Nicholas</li>
+                            <li>Joanne Murphy</li>
+                            <li>Hilary Gayner</li>
+                            <li>Stuart Stanton</li>
+                            <li>Ben Hopton</li>
+                            <li>James Stanton</li>
+                            <li>Louise Grubb</li>
+                            <li>Richard Spray</li>
+                            <li>Trevor Sheppard</li>
+                            <li>Chris Eldridge</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">18 May 2023 – 1260 Plain Bob Triples</div>
+                        <p>Studley, Warwickshire – Coventry Diocesan Guild</p>
+                        <p>Coronation of King Charles III event. Marked multiple firsts for band members.</p>
+                        <ul>
+                            <li>William Blizzard</li>
+                            <li>Robin J Dale</li>
+                            <li>Louise Grubb</li>
+                            <li>Christopher W Tennant</li>
+                            <li>Richard H Spray</li>
+                            <li>Peter Gordon</li>
+                            <li>Laurence K J Nicholas (C)</li>
+                            <li>Ethan Pomeroy</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">7 May 2023 – 1260 Plain Bob Doubles</div>
+                        <p>Studley, Warwickshire</p>
+                        <p>Under-23 band, conductor for first time, for the Coronation of King Charles III.</p>
+                        <ul>
+                            <li>Ethan Pomeroy</li>
+                            <li>William Blizzard</li>
+                            <li>Elizabeth M Tennant</li>
+                            <li>Peter Gordon</li>
+                            <li>Peter E S Nicholas (C)</li>
+                            <li>Noah Corlett</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">26 Mar 2023 – 1260 Plain Bob Doubles</div>
+                        <p>Honiley, Warwickshire – Coventry Diocesan Guild</p>
+                        <p>Quarter-peal by mostly youth team in celebration of my 18th birthday (I was bell 6, age 18, average age 15).</p>
+                        <ul>
+                            <li>Annie Hall</li>
+                            <li>Andrew Alldrick</li>
+                            <li>Zack Poulton</li>
+                            <li>Noah Poulton (C), age 15</li>
+                            <li>William Blizzard, age 15</li>
+                            <li>Ethan Pomeroy, age 18</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">18 Feb 2023 – 1260 Plain Bob Doubles (First quarter)</div>
+                        <p>Studley, Warwickshire – W&D Association</p>
+                        <p>First quarter at first attempt for Ethan (1) and Noah (6).</p>
+                        <ul>
+                            <li>Ethan Pomeroy (1)</li>
+                            <li>Louise Grubb</li>
+                            <li>Richard H Spray</li>
+                            <li>David M Jones</li>
+                            <li>Rachel D Page (C)</li>
+                            <li>Noah Corlett (6)</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">8 Jan 2023 – 180 Plain Bob Doubles</div>
+                        <p>Studley, Warwickshire</p>
+                        <p>In memoriam to A J Barnfield. Sunday service band.</p>
+                        <ul>
+                            <li>1 Ethan Pomeroy</li>
+                            <li>2 William Blizzard</li>
+                            <li>3 Elizabeth M Tennant</li>
+                            <li>4 Peter Gordon</li>
+                            <li>5 Peter E S Nicholas (C)</li>
+                            <li>6 Noah Corlett</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">19 Sep 2022 – General Ringing (Half-Muffled)</div>
+                        <p>Studley, Warwickshire – W&D Association</p>
+                        <p>Rung half-muffled for the funeral of HM Queen Elizabeth II.</p>
+                        <ul>
+                            <li>Louise Grubb</li>
+                            <li>Richard H Spray</li>
+                            <li>William Blizzard</li>
+                            <li>Pauline Eldridge</li>
+                            <li>Chris Eldridge</li>
+                            <li>Ethan Pomeroy</li>
+                            <li>Noah Corlett</li>
+                            <li>Laurence K J Nicholas</li>
+                            <li>Peter E S Nicholas</li>
+                            <li>Esther Nicholas</li>
+                            <li>Andrew Richards</li>
+                            <li>Trevor Sheppard</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">11 Sep 2022 – General Ringing (Half-Muffled)</div>
+                        <p>Studley, Warwickshire – W&D Association</p>
+                        <p>Rung half-muffled for the Sunday morning service following the death of HM Queen Elizabeth II (In Memoriam).</p>
+                        <ul>
+                            <li>Louise Grubb</li>
+                            <li>Richard H Spray</li>
+                            <li>William Blizzard</li>
+                            <li>Tasha Chambers</li>
+                            <li>Pauline Eldridge</li>
+                            <li>Chris Eldridge</li>
+                            <li>Ethan Pomeroy</li>
+                            <li>Michaela Colebrook</li>
+                            <li>Megan Blizzard</li>
+                            <li>Noah Corlett</li>
+                            <li>Eve Corlett</li>
+                            <li>Esther Nicholas</li>
+                            <li>Peter E S Nicholas</li>
+                            <li>Laurence K J Nicholas</li>
+                            <li>Sarah Nicholas</li>
+                            <li>Lizzy Tennant</li>
+                            <li>Chris Tennant</li>
+                        </ul>
                     </div>
                 </div>
-            </section> -->
-            <section id="bell-ringing">
-      <h2>Bell-Ringing Record</h2>
-          <p class="subtitle">Select performances featuring me</p>
-  <div class="card-grid">
-  
-    <!-- Peal for Diamond Anniversary -->
-    <div class="card">
-      <div class="card-header">26 Jun 2025 – 5040 Plain Bob Triples (Peal)</div>
-      <p>Studley, Warwickshire – Coventry Diocesan Guild</p>
-      <p>Composed by C Ravenscroft. Rung to mark the Diamond Wedding Anniversary of June & Richard Spray. My first peal.</p>
-      <ul>
-        <li>1 Ethan L Pomeroy</li>
-        <li>2 Louise M Grubb</li>
-        <li>3 Annie Hall</li>
-        <li>4 Rachel D Page</li>
-        <li>5 Robin J Dale</li>
-        <li>6 Andrew J Hartley</li>
-        <li>7 Michael Chester (C)</li>
-        <li>8 Timothy G Haslam</li>
-      </ul>
-    </div>
-    
-    <!-- VJ Day 80th -->
-    <div class="card">
-      <div class="card-header">15 Aug 2025 – Rounds & Call Changes</div>
-      <p>Studley, Warwickshire – Coventry Diocesan Guild</p>
-      <p>Rung on VJ Day in memory of the fallen and to celebrate peace; included VE Day recruits ringing for the first time.</p>
-      <ul>
-        <li>1 Daniel Morris</li>
-        <li>2 Hilary Gayler</li>
-        <li>3 Dave Harding</li>
-        <li>4 Stuart Stanton</li>
-        <li>5 Dave Bourne</li>
-        <li>6 Louise Grubb</li>
-        <li>7 Ethan Pomeroy</li>
-        <li>8 Richard Spray</li>
-        <li>9 Jemma Bourne</li>
-        <li>10 Belle Lineham</li>
-        <li>11 Grace Bourne</li>
-        <li>12 Luke Bourne</li>
-      </ul>
-    </div>
-    
-    <!-- 18 Aug 2025 Plain Bob Doubles -->
-    <div class="card">
-      <div class="card-header">16 Aug 2025 – 1260 Plain Bob Doubles</div>
-      <p>Studley, Warwickshire – Coventry Diocesan Guild</p>
-      <p>First inside bell.</p>
-      <ul>
-        <li>1 Louise Grubb</li>
-        <li>2 Ethan Pomeroy</li>
-        <li>3 Annie Hall</li>
-        <li>4 Charles Hayward</li>
-        <li>5 Michael Chester (C)</li>
-        <li>6 David Bourne</li>
-      </ul>
-    </div>
-    
-    <!-- VE Day 80th general ringing -->
-    <div class="card">
-      <div class="card-header">8 May 2025 – General Ringing & Chiming</div>
-      <p>Studley, Warwickshire – Coventry Diocesan Guild</p>
-      <p>42 ringers/chimers celebrated the 80th Anniversary of Victory in Europe.</p>
-      <ul>
-        <li>Louise Grubb</li>
-        <li>Richard Spray</li>
-        <li>Chris Eldridge</li>
-        <li>Ethan Pomeroy</li>
-        <li>Tash Vale</li>
-        <li>Dave Harding</li>
-        <li>Hilary Gayler</li>
-        <li>Trevor Sheppard</li>
-        <li>Daniel Morris</li>
-        <li>Stuart Stanton</li>
-        <li>Lorena Juan Marti</li>
-        <li>… plus many visitors (listed in original post)</li>
-      </ul>
-    </div>
-    
-    <!-- 29 May 2025 Doubles for RHSpray's 80th -->
-    <div class="card">
-      <div class="card-header">29 May 2025 – 1260 Plain Bob Doubles</div>
-      <p>Studley, Warwickshire – Coventry Diocesan Guild</p>
-      <p>Rung to celebrate Richard H Spray’s 80th birthday (conductor: Rachel D Page).</p>
-      <ul>
-        <li>Ethan Pomeroy</li>
-        <li>Louise Grubb</li>
-        <li>Robin J Dale</li>
-        <li>David M Jones</li>
-        <li>Rachel D Page (C)</li>
-        <li>David Bourne</li>
-      </ul>
-    </div>
-    
-    <!-- 19 Sep 2024 Triples -->
-    <div class="card">
-      <div class="card-header">19 Sep 2024 – 1680 Plain Bob Triples</div>
-      <p>Studley, Warwickshire – Nativity of the Blessed Virgin Mary</p>
-      <p>Composed by C Ravencroft.</p>
-      <ul>
-        <li>Ethan Pomeroy</li>
-        <li>Louise Grubb</li>
-        <li>Annie Hall</li>
-        <li>Rachel D Page</li>
-        <li>Robin Dale</li>
-        <li>Tim Haslam</li>
-        <li>Andrew J Hartley (C)</li>
-        <li>Noah Corlett</li>
-      </ul>
-    </div>
-    
-    <!-- 6 Jun 2024 D-Day commemorative general ringing -->
-    <div class="card">
-      <div class="card-header">6 Jun 2024 – General Ringing</div>
-      <p>Studley, Warwickshire</p>
-      <p>Rounds & call changes, various methods, to commemorate 80 years since the D-Day landings.</p>
-      <ul>
-        <li>Robin Dale</li>
-        <li>Chris Tennant</li>
-        <li>Lizzie Tennant</li>
-        <li>Ethan Pomeroy</li>
-        <li>Peter E S Nicholas</li>
-        <li>Joanne Murphy</li>
-        <li>Hilary Gayner</li>
-        <li>Stuart Stanton</li>
-        <li>Ben Hopton</li>
-        <li>James Stanton</li>
-        <li>Louise Grubb</li>
-        <li>Richard Spray</li>
-        <li>Trevor Sheppard</li>
-        <li>Chris Eldridge</li>
-      </ul>
-    </div>
-    
-    <!-- 18 May 2023 Triples firsts -->
-    <div class="card">
-      <div class="card-header">18 May 2023 – 1260 Plain Bob Triples</div>
-      <p>Studley, Warwickshire – Coventry Diocesan Guild</p>
-      <p>Coronation of King Charles III event. Marked multiple firsts for band members.</p>
-      <ul>
-        <li>William Blizzard</li>
-        <li>Robin J Dale</li>
-        <li>Louise Grubb</li>
-        <li>Christopher W Tennant</li>
-        <li>Richard H Spray</li>
-        <li>Peter Gordon</li>
-        <li>Laurence K J Nicholas (C)</li>
-        <li>Ethan Pomeroy</li>
-      </ul>
-    </div>
-    
-    <!-- 7 May 2023 Coronation Doubles -->
-    <div class="card">
-      <div class="card-header">7 May 2023 – 1260 Plain Bob Doubles</div>
-      <p>Studley, Warwickshire</p>
-      <p>Under-23 band, conductor for first time, for the Coronation of King Charles III.</p>
-      <ul>
-        <li>Ethan Pomeroy</li>
-        <li>William Blizzard</li>
-        <li>Elizabeth M Tennant</li>
-        <li>Peter Gordon</li>
-        <li>Peter E S Nicholas (C)</li>
-        <li>Noah Corlett</li>
-      </ul>
-    </div>
-    
-    <!-- 26 Mar 2023 Youth birthday quarter-peal -->
-    <div class="card">
-      <div class="card-header">26 Mar 2023 – 1260 Plain Bob Doubles</div>
-      <p>Honiley, Warwickshire – Coventry Diocesan Guild</p>
-      <p>Quarter-peal by mostly youth team in celebration of my 18th birthday (I was bell 6, age 18, average age 15).</p>
-      <ul>
-        <li>Annie Hall</li>
-        <li>Andrew Alldrick</li>
-        <li>Zack Poulton</li>
-        <li>Noah Poulton (C), age 15</li>
-        <li>William Blizzard, age 15</li>
-        <li>Ethan Pomeroy, age 18</li>
-      </ul>
-    </div>
-    
-    <!-- 18 Feb 2023 - first quarter -->
-    <div class="card">
-      <div class="card-header">18 Feb 2023 – 1260 Plain Bob Doubles (First quarter)</div>
-      <p>Studley, Warwickshire – W&D Association</p>
-      <p>First quarter at first attempt for Ethan (1) and Noah (6).</p>
-      <ul>
-        <li>Ethan Pomeroy (1)</li>
-        <li>Louise Grubb</li>
-        <li>Richard H Spray</li>
-        <li>David M Jones</li>
-        <li>Rachel D Page (C)</li>
-        <li>Noah Corlett (6)</li>
-      </ul>
-    </div>
-    
-    <!-- 8 Jan 2023 – 180 Plain Bob Doubles -->
-    <div class="card">
-      <div class="card-header">8 Jan 2023 – 180 Plain Bob Doubles</div>
-      <p>Studley, Warwickshire</p>
-      <p>In memoriam to A J Barnfield. Sunday service band.</p>
-      <ul>
-        <li>1 Ethan Pomeroy</li>
-        <li>2 William Blizzard</li>
-        <li>3 Elizabeth M Tennant</li>
-        <li>4 Peter Gordon</li>
-        <li>5 Peter E S Nicholas (C)</li>
-        <li>6 Noah Corlett</li>
-      </ul>
-    </div>
-    
-    <!-- 19 & 11 Sept 2022 In Memoriam -->
-    <div class="card">
-      <div class="card-header">19 Sep 2022 – General Ringing (Half-Muffled)</div>
-      <p>Studley, Warwickshire – W&D Association</p>
-      <p>Rung half-muffled for the funeral of HM Queen Elizabeth II.</p>
-      <ul>
-        <li>Louise Grubb</li>
-        <li>Richard H Spray</li>
-        <li>William Blizzard</li>
-        <li>Pauline Eldridge</li>
-        <li>Chris Eldridge</li>
-        <li>Ethan Pomeroy</li>
-        <li>Noah Corlett</li>
-        <li>Laurence K J Nicholas</li>
-        <li>Peter E S Nicholas</li>
-        <li>Esther Nicholas</li>
-        <li>Andrew Richards</li>
-        <li>Trevor Sheppard</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-header">11 Sep 2022 – General Ringing (Half-Muffled)</div>
-      <p>Studley, Warwickshire – W&D Association</p>
-      <p>Rung half-muffled for the Sunday morning service following the death of HM Queen Elizabeth II (In Memoriam).</p>
-      <ul>
-        <li>Louise Grubb</li>
-        <li>Richard H Spray</li>
-        <li>William Blizzard</li>
-        <li>Tasha Chambers</li>
-        <li>Pauline Eldridge</li>
-        <li>Chris Eldridge</li>
-        <li>Ethan Pomeroy</li>
-        <li>Michaela Colebrook</li>
-        <li>Megan Blizzard</li>
-        <li>Noah Corlett</li>
-        <li>Eve Corlett</li>
-        <li>Esther Nicholas</li>
-        <li>Peter E S Nicholas</li>
-        <li>Laurence K J Nicholas</li>
-        <li>Sarah Nicholas</li>
-        <li>Lizzy Tennant</li>
-        <li>Chris Tennant</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-			<section id="contact">
+            </section>
+            
+            <section id="contact">
                 <h2>Get in touch</h2>
                 <p class="subtitle">Email is best, but I'm around on GitHub/LinkedIn too</p>
                 <div class="card">
                     <div class="contact-links">
                         <a href="mailto:exp373@student.bham.ac.uk" class="btn btn-secondary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7-10-7"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
                             exp373@student.bham.ac.uk
                         </a>
                         <a href="https://github.com/yourhandle" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 17 2.22A13.38 13.38 0 0 0 12 2c-1.95 0-4.05.4-5.26 1.62C4.94 2.65 3.73 1 3.73 1a5.07 5.07 0 0 0-.09 3.77A5.44 5.44 0 0 0 2 10.74c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22.95V17c0-2.22-1.78-4-4-4H8c-2.22 0-4 1.78-4 4v5.95M20 10.95V4c0-2.22-1.78-4-4-4H8c-2.22 0-4 1.78-4 4v6.95M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4z"/><circle cx="12" cy="12" r="3"/><path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0 4 4h0a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4z"/></svg>
                             GitHub
                         </a>
                         <a href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
                             LinkedIn
                         </a>
                     </div>
                     <p style="margin-top: 1rem;">I’m open to tutoring, research assistant roles, and collaborations on maths education tools.</p>
                 </div>
             </section>
-
         </div>
     </main>
 
@@ -714,6 +751,25 @@
         </div>
     </footer>
 
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const sunIcon = document.querySelector('.toggle-switch-sun');
+        const moonIcon = document.querySelector('.toggle-switch-moon');
+
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) {
+            document.body.classList.add('dark');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            const isCurrentlyDark = document.body.classList.toggle('dark');
+            localStorage.setItem('darkMode', isCurrentlyDark);
+        });
+
+        // The old icon toggle logic is no longer needed with the CSS-based approach,
+        // but I'll leave this here as a cleaner, more robust alternative for future changes.
+        // The icons now switch based on the `body.dark` class.
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
 </body>
 </html>
