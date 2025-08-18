@@ -62,20 +62,14 @@
             line-height: 1.6;
             margin: 0;
             transition: color 0.5s, background-color 0.5s;
-            background-image:
-                radial-gradient(circle at 10% 10%, var(--subtle-gradient-1) 0%, transparent 25%),
-                radial-gradient(circle at 90% 90%, var(--subtle-gradient-2) 0%, transparent 25%),
-                linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-            background-size: 20px 20px;
+            background-image: radial-gradient(at 70% 20%, var(--subtle-gradient-1) 0%, transparent 50%),
+                              radial-gradient(at 10% 90%, var(--subtle-gradient-2) 0%, transparent 50%);
+            background-attachment: fixed;
         }
         
         body.dark {
-            background-image:
-                radial-gradient(circle at 10% 10%, var(--subtle-gradient-1) 0%, transparent 25%),
-                radial-gradient(circle at 90% 90%, var(--subtle-gradient-2) 0%, transparent 25%),
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-image: radial-gradient(at 70% 20%, var(--subtle-gradient-1) 0%, transparent 50%),
+                              radial-gradient(at 10% 90%, var(--subtle-gradient-2) 0%, transparent 50%);
         }
 
         .container {
@@ -429,15 +423,15 @@
                 <div class="hero-content">
                     <div>
                         <div class="tagline">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M21.43 2c.4 1.25-.97 2.45-1.43 2.57-2-.45-4.4-.73-6.57-.73-4.57 0-8.25 1.58-9.43 4.38a2 2 0 0 0 1.54 2.87c.7-.22 2.22-.5 3.54-.5 4.57 0 8.25 1.58 9.43 4.38a2 2 0 0 0-1.54 2.87c-.7.22-2.22.5-3.54.5-4.57 0-8.25-1.58-9.43-4.38a2 2 0 0 0-1.54-2.87c-.7-.22-2.22-.5-3.54-.5-4.57 0-8.25 1.58-9.43 4.38"/><path d="M12 2c.5 1 1 1.5 1.5 2h.147a4 4 0 0 0-3.197-3.913M12 22a4 4 0 0 1 4-4v-.135a4 4 0 0 1-3.197-3.913"/><path d="M17 12c.5-1 1-1.5 1.5-2h.147a4 4 0 0 0-3.197-3.913M7 12c-.5-1-1-1.5-1.5-2H5.353a4 4 0 0 1 3.197-3.913"/><path d="M12 12c1 1 1.5 2 2 3h.276a4 4 0 0 0 3.197 3.913M12 12c-1-1-1.5-2-2-3H9.724a4 4 0 0 1-3.197-3.913"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M21.43 2c.4 1.25-.97 2.45-1.43 2.57-2-.45-4.4-.73-6.57-.73-4.57 0-8.25 1.58-9.43 4.38a2 2 0 0 0 1.54 2.87c.7-.22 2.22-.5 3.54-.5-4.57 0-8.25 1.58-9.43 4.38a2 2 0 0 0-1.54 2.87c-.7.22-2.22.5-3.54.5-4.57 0-8.25-1.58-9.43-4.38a2 2 0 0 0-1.54-2.87c-.7-.22-2.22-.5-3.54-.5-4.57 0-8.25 1.58-9.43 4.38"/><path d="M12 2c.5 1 1 1.5 1.5 2h.147a4 4 0 0 0-3.197-3.913M12 22a4 4 0 0 1 4-4v-.135a4 4 0 0 1-3.197-3.913"/><path d="M17 12c.5-1 1-1.5 1.5-2h.147a4 4 0 0 0-3.197-3.913M7 12c-.5-1-1-1.5-1.5-2H5.353a4 4 0 0 1 3.197-3.913"/><path d="M12 12c1 1 1.5 2 2 3h.276a4 4 0 0 0 3.197 3.913M12 12c-1-1-1.5-2-2-3H9.724a4 4 0 0 1-3.197-3.913"/></svg>
                             3rd-Year Mathematics — University of Birmingham
                         </div>
                         <h1>Rigour. Structure. Insight.<span class="animated-cursor">|</span></h1>
                         <p>I'm a mathematics student focused on real & complex analysis, functional & Fourier analysis, differential equations, and linear algebra. I enjoy turning abstract theory into clear arguments, readable notes, and practical code.</p>
                         <div class="buttons">
-                            <a href="mailto:exp373@student.bham.ac.uk" class="btn btn-primary">
+                            <a href="#contact" class="btn btn-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
-                                Email Me
+                                Contact Me
                             </a>
                         </div>
                     </div>
@@ -480,8 +474,48 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="container">
+            <section id="contact">
+                <h2>Get in Touch</h2>
+                <p class="subtitle">Connect with me on social media or by email.</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+                            Email
+                        </div>
+                        <p>The best way to reach me for professional inquiries.</p>
+                        <a href="mailto:exp373@student.bham.ac.uk" class="link">
+                            exp373@student.bham.ac.uk
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7H18v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7H10v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                            LinkedIn
+                        </div>
+                        <p>Connect with me to view my professional profile and network.</p>
+                        <a href="#" class="link">
+                            linkedin.com/in/ethanpomeroy
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-2-2c-.3 0-.6.1-.9.2a.8.8 0 0 1-1.4 0c-.3-.1-.6-.2-.9-.2a4.8 4.8 0 0 0-2 2v4"/><path d="M11 10.25v2.25l-2 2v-2.25"/><path d="M13 10.25v2.25l2 2v-2.25"/><path d="M12 2a10 10 0 0 0-3.1 19.95c.5.1.7-.2.7-.4v-1.4c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.4.7.1-.5.3-.9.5-1.1-1.8-.2-3.7-.9-3.7-4a3.5 3.5 0 0 1 1-2.4c.1-.2.5-1.1.1-2.4 0 0-.8-.3-.9-1c-.1-1 0-1.7 0-1.7s-.4-.7-.9-1.5c.3-.1.6-.2 1-.2 1 0 1.9.5 2.5 1.4.6-.2 1.3-.3 2-.3.7 0 1.4.1 2 .3.6-.9 1.5-1.4 2.5-1.4 1 0 1.8.1 2.2.4-.5.8-.8 1.6-.9 1.9-.3.7-.1 1.6.1 2.4.1.2.5 1 .9 1.5.1.2 1 .3 1.9.4.5.2 1.2.7 1.2 1.5s-.8 1.2-1.5 1.5c-.7.3-1.4.4-2.1.4s-1.4-.1-2.1-.4c-.7-.3-1.3-.9-1.8-1.5z"/></svg>
+                            GitHub
+                        </div>
+                        <p>View my coding projects, academic work, and more.</p>
+                        <a href="#" class="link">
+                            github.com/epom1
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
             <section id="about">
                 <h2>About</h2>
                 <p class="subtitle">What I'm studying and why it matters</p>
